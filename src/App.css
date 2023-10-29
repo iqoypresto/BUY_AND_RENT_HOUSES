@@ -1,0 +1,45 @@
+
+
+/*css for components*/
+
+/*nav style*/
+nav {
+  padding: 0 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  font-weight: 500;
+}
+
+nav a::after {
+  transition: 0.3s ease-in-out;
+  background: none repeat scroll 0 0 orangered;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav button {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 4px 15px;
+  font-weight: 500;
+}
+
+nav button:hover{
+  background-color: rgba(0, 0, 0, 0.058);
+}
+
+/*css for contents*/
+.content {
+  padding: 0 20px;
+}
