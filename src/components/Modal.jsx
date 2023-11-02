@@ -23,10 +23,18 @@ export const FilterModal = ({ closeModal }) => {
                         </div>
                     </header>
                     <div className="p-[10px]">
-                        <h5 className="font-medium">Harga</h5>
-                        <h5 className="font-medium">Kamar Tidur</h5>
-                        <h5 className="font-medium">Kamar Mandi</h5>
-                        <h5 className="font-medium">Luas Bangunan</h5>
+                        <div>
+                            <h5 className="font-medium">Harga</h5>
+                        </div>
+                        <div>
+                            <h5 className="font-medium">Kamar Tidur</h5>
+                        </div>
+                        <div>
+                            <h5 className="font-medium">Kamar Mandi</h5>
+                        </div>
+                        <div>
+                            <h5 className="font-medium">Luas Bangunan</h5>
+                        </div>
                     </div>
                 </div>
             </div>

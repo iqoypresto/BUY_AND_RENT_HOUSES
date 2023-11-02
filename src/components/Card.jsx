@@ -2,7 +2,7 @@ import React from "react";
 import { HiOfficeBuilding } from "react-icons/hi"
 import { IoIosBed } from "react-icons/io"
 import { GiBathtub } from "react-icons/gi"
-import { SlSizeFullscreen } from "react-icons/sl"
+import { BiArea } from "react-icons/bi"
 
 export const PropertyCard = (props) => {
     return (
@@ -17,7 +17,7 @@ export const PropertyCard = (props) => {
                             <p className="flex items-center gap-[3px]"><HiOfficeBuilding />{props.type}</p>
                             <p className="flex items-center gap-[4px]"><IoIosBed />{props.bedroom}</p>
                             <p className="flex items-center gap-[4px]"><GiBathtub />{props.bathroom}</p>
-                            <p className="flex items-center gap-[4px]"><SlSizeFullscreen />{props.size + ' sqm'}</p>
+                            <p className="flex items-center gap-[4px]"><BiArea />{props.size + ' m²'}</p>
                             <p className="flex items-center gap-[4px]">|</p>
                             <p className="flex items-center gap-[4px]">{props.furnished}</p>
                         </div>
