@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components";
+import { Navbar } from "../../components";
 import Hero from "../../assets/hero-banner.jpg"
 import Handphone from "../../assets/2022_icon_index.svg"
 import LangkahImg from "../../assets/terangi-langkah.png"
@@ -67,21 +67,8 @@ export const Home = () => {
                                     <img src={LangkahImg} alt="" />
                                 </div>
                             </section>
-                            <section className="max-w-screen-xl w-full mx-auto ">
-                                <h1 className="text-4xl font-medium mb-[20px]">Proyek Terkini</h1>
-                                <div className="grid grid-cols-4">
-                                    <div>a</div>
-                                    <div>b</div>
-                                    <div>c</div>
-                                    <div>d</div>
-                                </div>
-                            </section>
-                            <div className="bg-gray-200">
-                                <section className="max-w-screen-xl w-full mx-auto pt-[40px] pb-[20px]">
-                                <h1 className="text-4xl font-medium mb-[20px]">Kami pilihkan untuk Anda</h1>
-                                asdawd
-                                </section>
-                            </div>
+                            <footer className="h-[5px]">
+                            </footer>
                         </div>
                     </div>
                 </div>
