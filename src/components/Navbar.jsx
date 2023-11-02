@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+export const Navbar = () => {
     return (
         <>
-            <nav className="w-full bg-white overflow-hidden">
+            <nav className="w-full bg-white overflow-hidden shadow-md">
                 <div className="flex justify-between max-w-screen-xl mx-auto items-center">
                     <div className="flex items-center gap-[20px]">
                         <Link to='/'><img src="https://cdn.pgimgs.com/hive-ui/static/v0.1.3/logo/rumah-horizontal-by-pg.svg" width="160px" alt="aw" /></Link>
@@ -26,5 +26,3 @@ const Navbar = () => {
         </>
     )
 }
-
-export default Navbar;
