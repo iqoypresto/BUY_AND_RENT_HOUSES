@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2"
 import { IoSearchOutline } from "react-icons/io5"
 
-export const Filter = ({closeModal}) => {
+export const Filter = ({closeModal, searchCity}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
     }

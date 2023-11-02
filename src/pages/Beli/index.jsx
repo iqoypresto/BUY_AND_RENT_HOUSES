@@ -4,6 +4,7 @@ import { Navbar, Filter, FilterModal, PropertyCard } from "../../components";
 export const Beli = () => {
     const [propertiData, setPropertiData] = useState([])
     const [openModal, setOpenModal] = useState(false)
+    const [searchCity, setSearchCity] = useState('')
     const getData = async () => {
         try {
             const res = await fetch('https://sheet.best/api/sheets/9b36cbc6-cb51-4c3d-b3dc-e9891a644f88')
@@ -21,7 +22,7 @@ export const Beli = () => {
     return (
         <>
             {openModal &&
-                <FilterModal closeModal={setOpenModal} />
+                <FilterModal closeModal={setOpenModal} searchCity={setSearchCity} />
             }
             <Navbar />
             <div className="max-w-screen-xl mx-auto text-xs mt-[10px]">
@@ -35,8 +36,9 @@ export const Beli = () => {
                 </div>
                 <div className="space-y-[15px]">
                     {
-                        propertiData.length > 0 &&
-                        propertiData.map((properti) => (
+                        propertiData.filter((properti) => {
+                            return searchCity.toLowerCase() === '' ? properti : properti.city.toLowerCase().includes(search)
+                        }).map((properti) => (
                             <PropertyCard 
                             name       ={properti.name} 
                             address    ={properti.address} 
@@ -46,7 +48,15 @@ export const Beli = () => {
                             bathroom   ={properti.bathroom} 
                             size       ={parseInt(properti.size)} 
                             furnished  ={properti.furnished.replace(/^./, properti.furnished[0].toUpperCase())}
-                            price      ={properti.price.replace(/(\d{3})(\d{3})(\d{3})/, '$1,$2,$3')} 
+                            price      ={
+                                properti.price.length === 9 ?
+                                properti.price.replace(/(\d{3})(\d{3})(\d{3})/, '$1,$2,$3') :
+                                properti.price.length === 10 ?
+                                properti.price.replace(/(\d{1})(\d{3})(\d{3})(\d{3})/, '$1,$2,$3,$4') :
+                                properti.price.length === 11 ?
+                                properti.price.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1,$2,$3,$4') :
+                                properti.price.replace(/(\d{3})(\d{3})(\d{3})(\d{3})/, '$1,$2,$3,$4')
+                            } 
                             img        ={properti.galleries}
                             />
                         ))
