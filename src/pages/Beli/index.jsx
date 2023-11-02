@@ -3,8 +3,8 @@ import { Navbar, Filter, FilterModal, PropertyCard } from "../../components";
 
 export const Beli = () => {
     const [propertiData, setPropertiData] = useState([])
+    const [search, setSearch] = useState('')
     const [openModal, setOpenModal] = useState(false)
-    const [searchCity, setSearchCity] = useState('')
     const getData = async () => {
         try {
             const res = await fetch('https://sheet.best/api/sheets/9b36cbc6-cb51-4c3d-b3dc-e9891a644f88')
@@ -14,7 +14,7 @@ export const Beli = () => {
             console.log(err)
         }
     }
-
+    console.log(search)
     useEffect(() => {
         getData()
     }, [])
@@ -22,13 +22,13 @@ export const Beli = () => {
     return (
         <>
             {openModal &&
-                <FilterModal closeModal={setOpenModal} searchCity={setSearchCity} />
+                <FilterModal closeModal={setOpenModal} />
             }
             <Navbar />
             <div className="max-w-screen-xl mx-auto text-xs mt-[10px]">
                 Home {'>'} Beli
             </div>
-            <Filter closeModal={setOpenModal} />
+            <Filter closeModal={setOpenModal} searchFilter={setSearch} />
             <div className="max-w-screen-xl mx-auto my-[20px]">
                 <div className="mb-[15px]">
                     <h5>{propertiData.length} Properti Dijual di Indonesia</h5>
@@ -37,7 +37,7 @@ export const Beli = () => {
                 <div className="space-y-[15px]">
                     {
                         propertiData.filter((properti) => {
-                            return searchCity.toLowerCase() === '' ? properti : properti.city.toLowerCase().includes(search)
+                            return search.toLowerCase() === '' ? properti : properti.city.toLowerCase().includes(search)
                         }).map((properti) => (
                             <PropertyCard 
                             name       ={properti.name} 
@@ -50,12 +50,13 @@ export const Beli = () => {
                             furnished  ={properti.furnished.replace(/^./, properti.furnished[0].toUpperCase())}
                             price      ={
                                 properti.price.length === 9 ?
-                                properti.price.replace(/(\d{3})(\d{3})(\d{3})/, '$1,$2,$3') :
+                                properti.price.replace(/(\d{3})(\d{3})(\d{3})/, '$1,$2,$3') : 
                                 properti.price.length === 10 ?
                                 properti.price.replace(/(\d{1})(\d{3})(\d{3})(\d{3})/, '$1,$2,$3,$4') :
                                 properti.price.length === 11 ?
                                 properti.price.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1,$2,$3,$4') :
                                 properti.price.replace(/(\d{3})(\d{3})(\d{3})(\d{3})/, '$1,$2,$3,$4')
+
                             } 
                             img        ={properti.galleries}
                             />

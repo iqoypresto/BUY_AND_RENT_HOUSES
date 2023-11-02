@@ -1,14 +1,33 @@
 import React from "react";
+import { GrFormClose } from "react-icons/gr"
 
-export const FilterModal = ({closeModal}) => {
-    return(
+export const FilterModal = ({ closeModal }) => {
+    return (
         <>
             <div className="modal-background fixed backdrop-brightness-50 w-full h-full z-50 flex items-center">
-                <div className="modal-container w-[780px] mx-auto bg-white">
-                    <button className="text-2xl" onClick={() => {
-                        closeModal(false)
-                    }}>x</button>
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quos quasi obcaecati molestiae iusto at nostrum sed cupiditate perspiciatis a consectetur culpa voluptatibus ipsam ipsum temporibus, eius aperiam sit, mollitia similique debitis? Quod mollitia sapiente, molestias laboriosam ducimus cupiditate nobis sint fugiat fugit quasi vel animi sit officia possimus similique vitae laudantium cumque quas! Rem amet maiores dolor repudiandae at numquam fugiat animi earum porro, consequatur perspiciatis debitis quidem ducimus sapiente. Blanditiis unde voluptatem maiores facere deserunt aperiam rem, ea est nihil iusto, accusamus quis autem saepe corporis magnam tempore. Iste quae assumenda voluptatem beatae ad qui in eos magni!</h1>
+                <div className="modal-container w-[780px] mx-auto bg-white rounded-[15px]">
+                    <header className="py-[10px] pb-0 shadow-lg">
+                        <div className="px-[10px] flex items-center justify-between mb-[15px]">
+                            <h5 className="font-medium">Filter</h5>
+                            <button className="text-2xl" onClick={() => {
+                                closeModal(false)
+                            }}><GrFormClose /></button>
+                        </div>
+                        <div className="grid grid-cols-2 font-medium">
+                            <button className="border-b-2 py-[10px] border-red-400">
+                                <h5>Beli</h5>
+                            </button>
+                            <button className="border-b-2 py-[10px] border-gray-400 text-gray-400 hover:text-black hover:border-red-400">
+                                <h5>Sewa</h5>
+                            </button>
+                        </div>
+                    </header>
+                    <div className="p-[10px]">
+                        <h5 className="font-medium">Harga</h5>
+                        <h5 className="font-medium">Kamar Tidur</h5>
+                        <h5 className="font-medium">Kamar Mandi</h5>
+                        <h5 className="font-medium">Luas Bangunan</h5>
+                    </div>
                 </div>
             </div>
         </>
