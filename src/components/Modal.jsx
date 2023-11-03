@@ -22,9 +22,19 @@ export const FilterModal = ({ closeModal }) => {
                             </button>
                         </div>
                     </header>
-                    <div className="p-[10px]">
+                    <form className="p-[10px]">
                         <div>
                             <h5 className="font-medium">Harga</h5>
+                            <div className="grid grid-cols-2 gap-[15px]">
+                                <div className="flex flex-col">
+                                    <label htmlFor="">Minimum</label>
+                                    <input className="border" type="number" />
+                                </div>
+                                <div className="flex flex-col">
+                                    <label htmlFor="">Minimum</label>
+                                    <input className="border" type="number" />
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <h5 className="font-medium">Kamar Tidur</h5>
@@ -35,7 +45,7 @@ export const FilterModal = ({ closeModal }) => {
                         <div>
                             <h5 className="font-medium">Luas Bangunan</h5>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </>

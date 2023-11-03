@@ -7,17 +7,16 @@ export const Beli = () => {
     const [openModal, setOpenModal] = useState(false)
     const getData = async () => {
         try {
-            const res = await fetch('https://sheet.best/api/sheets/9b36cbc6-cb51-4c3d-b3dc-e9891a644f88')
+            const res = await fetch('https://sheet.best/api/sheets/3ac41fc1-f633-4405-b7f5-79664c4c6abe')
             setPropertiData(await res.json())
-            console.log(propertiData)
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
         }
     }
     console.log(search)
     useEffect(() => {
         getData()
-    }, [])
+    }, )
 
     return (
         <>
@@ -38,8 +37,8 @@ export const Beli = () => {
                     {
                         propertiData.filter((properti) => {
                             return search.toLowerCase() === '' ? properti : properti.city.toLowerCase().includes(search)
-                        }).map((properti) => (
-                            <PropertyCard 
+                        }).map((properti, i) => (
+                            <PropertyCard key={i}
                             name       ={properti.name} 
                             address    ={properti.address} 
                             tower      ={properti.tower} 
