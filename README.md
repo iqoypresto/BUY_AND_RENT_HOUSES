@@ -7,7 +7,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Live server on : https://buy-and-rent-houses-as8bomyun-iqoypresto.vercel.app/
+Live server on : https://buy-and-rent-houses-a3y150tpt-iqoypresto.vercel.app
 
 Rest API       : https://sheet.best/api/sheets/9b36cbc6-cb51-4c3d-b3dc-e9891a644f88
 
